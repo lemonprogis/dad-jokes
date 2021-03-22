@@ -10,20 +10,27 @@ import {EffectsModule} from '@ngrx/effects';
 import {ConfigEffects} from './store/effects/config.effects';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+
+const modules: any[] = [
+  BrowserModule,
+  BrowserAnimationsModule,
+  StoreModule.forRoot(appReducers),
+  EffectsModule.forRoot([ConfigEffects]),
+  HttpClientModule,
+  MatCardModule,
+  MatButtonModule,
+  MatInputModule
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     JokeComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    StoreModule.forRoot(appReducers),
-    EffectsModule.forRoot([ConfigEffects]),
-    HttpClientModule,
-    MatCardModule
-  ],
+  imports: [...modules],
+  exports: [...modules],
   providers: [HttpClient],
   bootstrap: [AppComponent]
 })
