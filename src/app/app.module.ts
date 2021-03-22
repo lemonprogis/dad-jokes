@@ -12,6 +12,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 const modules: any[] = [
   BrowserModule,
@@ -19,6 +20,7 @@ const modules: any[] = [
   StoreModule.forRoot(appReducers),
   EffectsModule.forRoot([ConfigEffects]),
   HttpClientModule,
+  MatToolbarModule,
   MatCardModule,
   MatButtonModule,
   MatInputModule
